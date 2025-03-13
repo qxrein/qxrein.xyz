@@ -1089,7 +1089,12 @@ $c_LMatrixButtons$.prototype.addButton__Lorg_scalajs_dom_Element__V = (function(
     var currentLabel = $as_T(button.textContent);
     var xs = $m_LMatrixButtons$().LMatrixButtons$__f_buttonLabels;
     var linkIndex = $m_sc_ArrayOps$().indexOf$extension__O__O__I__I(xs, currentLabel, 0);
-    return ((linkIndex >= 0) ? (window.open($n($m_LMatrixButtons$().LMatrixButtons$__f_buttonLinks).get(linkIndex), "_blank"), (void 0)) : (void 0));
+    if ((linkIndex >= 0)) {
+      window.location.href = $n($m_LMatrixButtons$().LMatrixButtons$__f_buttonLinks).get(linkIndex);
+      return (void 0);
+    } else {
+      return (void 0);
+    }
   }));
   row.appendChild(button);
 });

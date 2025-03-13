@@ -6,7 +6,7 @@ import scala.scalajs.js.annotation.{JSExportTopLevel, JSExport}
 object MatrixButtons {
   val buttonLabels = Array("GITHUB", "ABOUT", "BLOG", "CONTACT")
   val buttonLinks = Array(
-    "https://github.com/qxrein", // HOME now redirects to GitHub
+    "https://github.com/qxrein", // GITHUB
     "https://about.qxrein.xyz",  // ABOUT
     "https://blog.qxrein.xyz",   // BLOG
     "https://contact.qxrein.xyz" // CONTACT
@@ -108,8 +108,8 @@ object MatrixButtons {
       val currentLabel = button.textContent
       val linkIndex = buttonLabels.indexOf(currentLabel)
       if (linkIndex >= 0) {
-        // Open the link in a new tab
-        window.open(buttonLinks(linkIndex), "_blank")
+        // Open the link in the same tab (removed "_blank" parameter)
+        window.location.href = buttonLinks(linkIndex)
       }
     })
     
