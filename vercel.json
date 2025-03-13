@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "public": true,
+  "builds": [],
+  "routes": [
+    { "src": "/(.*)", "dest": "/target/scala-3.6.3/$1" }
+  ]
+}
+
