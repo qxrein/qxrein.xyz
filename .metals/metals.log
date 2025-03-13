@@ -1,0 +1,454 @@
+2025.03.14 03:04:33 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+Mar 14, 2025 3:04:33 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "textDocument/didOpen",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt",
+      "languageId": "scala",
+      "version": 1,
+      "text": "addSbtPlugin(\"org.scala-js\" % \"sbt-scalajs\" % \"1.17.0\")\nlibraryDependencies +\u003d \"org.scala-js\" %% \"scalajs-env-nodejs\" % \"1.4.0\"\nlibraryDependencies +\u003d \"org.scala-js\" %% \"scalajs-linker-interface\" % \"1.17.0\"\n"
+    }
+  }
+}
+java.lang.IllegalStateException: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.didOpen(org.eclipse.lsp4j.DidOpenTextDocumentParams)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:73)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.file.NoSuchFileException: /home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3268)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.metals.MetalsLspService.didOpen(MetalsLspService.scala:754)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:403)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	... 11 more
+
+2025.03.14 03:04:34 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+Mar 14, 2025 3:04:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+java.lang.IllegalStateException: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:73)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.file.NoSuchFileException: /home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3268)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:445)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionAbsolutePathBuffers.toInputFromBuffers(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.FormattingProvider.format(FormattingProvider.scala:114)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$formatting$1(MetalsLspService.scala:1066)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.formatting(MetalsLspService.scala:1060)
+	at scala.meta.internal.metals.WorkspaceLspService.formatting(WorkspaceLspService.scala:476)
+	at scala.meta.metals.lsp.DelegatingScalaService.formatting(DelegatingScalaService.scala:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	... 11 more
+
+Mar 14, 2025 3:04:36 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+java.lang.IllegalStateException: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:73)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.file.NoSuchFileException: /home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3268)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:445)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionAbsolutePathBuffers.toInputFromBuffers(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.FormattingProvider.format(FormattingProvider.scala:114)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$formatting$1(MetalsLspService.scala:1066)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.formatting(MetalsLspService.scala:1060)
+	at scala.meta.internal.metals.WorkspaceLspService.formatting(WorkspaceLspService.scala:476)
+	at scala.meta.metals.lsp.DelegatingScalaService.formatting(DelegatingScalaService.scala:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	... 11 more
+
+2025.03.14 03:04:36 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt[0m
+2025.03.14 03:04:36 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:04:57 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/project/plugins.sbt[0m
+2025.03.14 03:04:57 INFO  Shutting down server[0m
+2025.03.14 03:04:57 INFO  shutting down Metals[0m
+2025.03.14 03:05:42 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+Mar 14, 2025 3:05:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "textDocument/didOpen",
+  "params": {
+    "textDocument": {
+      "uri": "file:///home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala",
+      "languageId": "scala",
+      "version": 1,
+      "text": "import org.scalajs.dom\nimport org.scalajs.dom.{document, window}\nimport scala.scalajs.js\nimport scala.scalajs.js.annotation.{JSExportTopLevel, JSExport}\n\nobject MatrixButtons {\n  val buttonLabels \u003d Array(\"HOME\", \"ABOUT\", \"BLOG\", \"CONTACT\")\n  val buttonColors \u003d Array(\n    \"rgba(128, 0, 128, 0.7)\",  // Dark purple\n    \"rgba(139, 0, 0, 0.7)\",    // Dark red\n    \"rgba(165, 42, 42, 0.7)\",  // Light red\n    \"rgba(255, 140, 0, 0.7)\"   // Dark orange\n  )\n  \n  def main(args: Array[String]): Unit \u003d {\n    // Make sure the DOM is loaded before we start\n    document.addEventListener(\"DOMContentLoaded\", { (_: dom.Event) \u003d\u003e\n      setupMatrix()\n    })\n  }\n  \n  def setupMatrix(): Unit \u003d {\n    val container \u003d document.getElementById(\"matrix-container\")\n    \n    // Create the initial set of rows\n    for (_ \u003c- 0 until 10) {\n      addMatrixRow(container)\n    }\n    \n    // Set up scrolling behavior\n    window.addEventListener(\"scroll\", { (_: dom.Event) \u003d\u003e\n      val scrollHeight \u003d document.documentElement.scrollHeight\n      val scrollTop \u003d document.documentElement.scrollTop\n      val clientHeight \u003d document.documentElement.clientHeight\n      \n      // If we\u0027re near the bottom, add more content\n      if (scrollTop + clientHeight \u003e scrollHeight - 300) {\n        for (_ \u003c- 0 until 5) {\n          addMatrixRow(container)\n        }\n      }\n    })\n  }\n  \n  def addMatrixRow(container: dom.Element): Unit \u003d {\n    val row \u003d document.createElement(\"div\")\n    row.className \u003d \"matrix-row\"\n    \n    // Randomly decide how many buttons to put in this row (2-4)\n    val buttonCount \u003d 2 + scala.util.Random.nextInt(3)\n    \n    for (_ \u003c- 0 until buttonCount) {\n      addButton(row)\n    }\n    \n    container.appendChild(row)\n  }\n  \n  def addButton(row: dom.Element): Unit \u003d {\n    val button \u003d document.createElement(\"div\")\n    button.className \u003d \"matrix-button\"\n    \n    // Randomly pick a label and color\n    val labelIndex \u003d scala.util.Random.nextInt(buttonLabels.length)\n    val colorIndex \u003d scala.util.Random.nextInt(buttonColors.length)\n    \n    button.textContent \u003d buttonLabels(labelIndex)\n    button.style.backgroundColor \u003d buttonColors(colorIndex)\n    \n    // Add a random width to make it more interesting\n    val width \u003d 100 + scala.util.Random.nextInt(100)\n    button.style.width \u003d s\"${width}px\"\n    \n    // Add click event\n    button.addEventListener(\"click\", { (_: dom.Event) \u003d\u003e\n      window.alert(s\"You clicked ${buttonLabels(labelIndex)}\")\n    })\n    \n    row.appendChild(button)\n  }\n}\n"
+    }
+  }
+}
+java.lang.IllegalStateException: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.didOpen(org.eclipse.lsp4j.DidOpenTextDocumentParams)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:73)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:231)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.file.NoSuchFileException: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3268)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.metals.MetalsLspService.didOpen(MetalsLspService.scala:754)
+	at scala.meta.internal.metals.WorkspaceLspService.didOpen(WorkspaceLspService.scala:403)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	... 11 more
+
+Mar 14, 2025 3:05:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+java.lang.IllegalStateException: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:73)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.file.NoSuchFileException: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3268)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:445)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionAbsolutePathBuffers.toInputFromBuffers(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.FormattingProvider.format(FormattingProvider.scala:114)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$formatting$1(MetalsLspService.scala:1066)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.formatting(MetalsLspService.scala:1060)
+	at scala.meta.internal.metals.WorkspaceLspService.formatting(WorkspaceLspService.scala:476)
+	at scala.meta.metals.lsp.DelegatingScalaService.formatting(DelegatingScalaService.scala:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	... 11 more
+
+2025.03.14 03:05:43 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+Mar 14, 2025 3:05:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+java.lang.IllegalStateException: An unexpected exception occurred while executing jsonrpc method public abstract java.util.concurrent.CompletableFuture scala.meta.metals.lsp.TextDocumentService.formatting(org.eclipse.lsp4j.DocumentFormattingParams)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:73)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:128)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:271)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:201)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.nio.file.NoSuchFileException: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3268)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:445)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionAbsolutePathBuffers.toInputFromBuffers(MetalsEnrichments.scala:621)
+	at scala.meta.internal.metals.FormattingProvider.format(FormattingProvider.scala:114)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$formatting$1(MetalsLspService.scala:1066)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLspService.formatting(MetalsLspService.scala:1060)
+	at scala.meta.internal.metals.WorkspaceLspService.formatting(WorkspaceLspService.scala:476)
+	at scala.meta.metals.lsp.DelegatingScalaService.formatting(DelegatingScalaService.scala:95)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	... 11 more
+
+2025.03.14 03:05:45 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:05:45 INFO  Shutting down server[0m
+2025.03.14 03:05:45 INFO  shutting down Metals[0m
+2025.03.14 03:05:45 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:08:26 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+2025.03.14 03:08:30 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:08:31 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+2025.03.14 03:08:33 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:08:35 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:08:35 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:08:35 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:08:58 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:08:58 INFO  Shutting down server[0m
+2025.03.14 03:08:58 INFO  shutting down Metals[0m
+2025.03.14 03:09:09 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+2025.03.14 03:09:09 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:09:11 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+2025.03.14 03:09:12 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:09:12 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/build.sbt[0m
+2025.03.14 03:09:12 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:09:33 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/build.sbt[0m
+2025.03.14 03:09:33 INFO  Shutting down server[0m
+2025.03.14 03:09:33 INFO  shutting down Metals[0m
+2025.03.14 03:13:57 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+2025.03.14 03:13:58 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+2025.03.14 03:14:27 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:14:28 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:14:28 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:14:28 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:14:49 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:14:49 INFO  Shutting down server[0m
+2025.03.14 03:14:49 INFO  shutting down Metals[0m
+2025.03.14 03:18:13 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+2025.03.14 03:18:13 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:18:14 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+2025.03.14 03:18:15 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:18:15 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:18:14 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:18:36 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:18:36 INFO  Shutting down server[0m
+2025.03.14 03:18:36 INFO  shutting down Metals[0m
+2025.03.14 03:25:00 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+2025.03.14 03:25:01 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+2025.03.14 03:27:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:27:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:27:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:27:03 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:27:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:27:19 INFO  Shutting down server[0m
+2025.03.14 03:27:19 INFO  shutting down Metals[0m
+2025.03.14 03:28:44 INFO  Started: Metals version 1.4.2 in folders '/home/chikoyeat/projects/homeqxrein/matrix-buttons' for client helix 24.7 (079f5442).[0m
+2025.03.14 03:28:45 ERROR Unexpected error initializing server: 
+org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Method not found: window/showMessageRequest
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:204)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:185)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:47 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:48 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:50 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:55 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:58 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:58 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:58 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:28:58 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:00 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:01 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:03 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:04 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:04 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:04 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:04 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:04 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:04 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:29:05 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:29:05 INFO  no build target found for /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala. Using presentation compiler with project's scala-library version: 3.3.4[0m
+2025.03.14 03:30:36 WARN  no build target for: /home/chikoyeat/projects/homeqxrein/matrix-buttons/src/main/scala/MatrixButtons.scala[0m
+2025.03.14 03:30:36 INFO  Shutting down server[0m
+2025.03.14 03:30:36 INFO  shutting down Metals[0m
